@@ -59,11 +59,37 @@ async function insertInwardOutwardOffice(payload){
     }
 }
 
-async function updateInwardOutwardOffice(){
-    
+async function updateInwardOutwardOffice(id){
+    try{
+        const data = await inwardOutwardOfficeModel.updateOne(id);
+        return {
+            error : false ,
+            data ,
+            message : "data update successful"
+        }
+    }
+    catch(err){
+        return{
+            error : true ,
+            message : err.message
+        }
+    }
 }
 
-async function deleteInwardOutwardOffice(){
-    
+async function deleteInwardOutwardOffice(id){
+    try{
+        const data = await inwardOutwardOfficeModel.deleteOne(id);
+        return{
+            error : false ,
+            data , 
+            message : "data deleted successful"
+        }
+    }        
+    catch(err) {
+        return{
+            error : true ,
+            message : err.message 
+        }
+    }
 }
-module.exports = {getAllInwardOutwardOffice , getByIDInwardOutwardOffice , insertInwardOutwardOffice ,}
+module.exports = {getAllInwardOutwardOffice , getByIDInwardOutwardOffice , insertInwardOutwardOffice , deleteInwardOutwardOffice , updateInwardOutwardOffice}
