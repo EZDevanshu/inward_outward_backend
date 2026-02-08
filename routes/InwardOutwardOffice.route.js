@@ -7,7 +7,7 @@ const inwardOutwardOffice = express.Router();
 inwardOutwardOffice.get('/' , getAll);
 inwardOutwardOffice.get('/:id' , getByID);
 inwardOutwardOffice.post('/' , insert);
-inwardOutwardOffice.post('/', update)
-inwardOutwardOffice.delete('/' , deleet)
+inwardOutwardOffice.put('/:id', update)
+inwardOutwardOffice.delete('/:id' , deleet)
 
 module.exports = {inwardOutwardOffice}

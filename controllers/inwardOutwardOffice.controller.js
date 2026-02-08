@@ -32,8 +32,8 @@ insert = async (req , res)=>{
 
 update  = async (req , res)=>{
     try{
-        const data = await updateInwardOutwardOffice(req.params.id);
-        res.status().json(data)
+        const data = await updateInwardOutwardOffice(req.params.id , req.body);
+        res.status(200).json(data)
     }
     catch(error) {
         res.status(500).send({message : error.message})
@@ -43,10 +43,10 @@ update  = async (req , res)=>{
 deleet = async (req , res)=>{
     try{
         const data = await deleteInwardOutwardOffice(req.params.id);
-        res.status().josn(data)
+        res.status(200).json(data)
     }
     catch(error){
-        res.status().send({message : error.message})
+        res.status(500).send({message : error.message})
     }
 }
-module.exports = {getAll , getByID , insert , deleet};
+module.exports = {getAll , getByID , insert , update , deleet};

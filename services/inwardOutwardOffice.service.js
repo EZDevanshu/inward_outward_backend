@@ -1,20 +1,28 @@
 const inwardOutwardOfficeModel = require("../models/inwardOutwardOffice.model")
 
 async function getAllInwardOutwardOffice(){
-    const data = await inwardOutwardOfficeModel.find();
-    if(data){
-        return{
-            error : false , 
-            data ,
-            message : "data fatched inwardOutwardOfficeMiddleware in get all data successful "
+    try{
+        const data = await inwardOutwardOfficeModel.find();
+        if(data){
+            return{
+                error : false , 
+                data ,
+                message : "data fatched inwardOutwardOfficeMiddleware in get all data successful "
+            }
+        }
+        else {
+            return {
+                error : true , 
+                message : "some error occured in inwardOutwardOfficeMiddleware in get all data"
+            }
         }
     }
-    else {
+    catch(error){
         return {
             error : true , 
-            message : "some error occured in inwardOutwardOfficeMiddleware in get all data"
+            message : error.message
         }
-    }
+    } 
 }
 
 async function getByIDInwardOutwardOffice(id) {
@@ -59,9 +67,9 @@ async function insertInwardOutwardOffice(payload){
     }
 }
 
-async function updateInwardOutwardOffice(id){
+async function updateInwardOutwardOffice(id , payload){
     try{
-        const data = await inwardOutwardOfficeModel.updateOne(id);
+        const data = await inwardOutwardOfficeModel.findByIdAndUpdate(id , payload );
         return {
             error : false ,
             data ,
@@ -78,7 +86,7 @@ async function updateInwardOutwardOffice(id){
 
 async function deleteInwardOutwardOffice(id){
     try{
-        const data = await inwardOutwardOfficeModel.deleteOne(id);
+        const data = await inwardOutwardOfficeModel.findByIdAndDelete(id);
         return{
             error : false ,
             data , 

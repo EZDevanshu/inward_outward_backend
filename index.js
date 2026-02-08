@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const { inwardOutwardOffice } = require('./routes/InwardOutwardOffice.route');
+
 const connectionDB = require('./db/mongo');
+const { inwardOutwardOffice } = require('./routes/InwardOutwardOffice.route');
+const { inwardRoute } = require('./routes/inward.route');
 
 const app = express();
 
@@ -11,6 +13,7 @@ connectionDB();
 app.use(express.json());
 
 app.use('/inward-outward-office' , inwardOutwardOffice);
+app.use('/inward' , inwardRoute);
 
 app.listen(PORT , ()=>{
     console.log(`server start at ${PORT}`)
