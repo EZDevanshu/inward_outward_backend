@@ -1,4 +1,3 @@
-const { get } = require("mongoose");
 const inwardModel = require("../models/inward.model");
 
 async function getAllInward(){
@@ -53,7 +52,7 @@ async function getByIDInward(id){
 
 async function insertInward(payload) {
     try{
-        const data = await inwardModel.insertOne(payload);
+        const data = await inwardModel.create(payload);
         if(data){
             return {
                 error : false ,
@@ -78,7 +77,7 @@ async function insertInward(payload) {
 
 async function updateInward(id , payload){
     try{
-        const data = await inwardModel.findOneAndUpdate(id , payload);
+        const data = await inwardModel.findByIdAndUpdate(id , payload);
         if(data){
             return{
                 error : false ,

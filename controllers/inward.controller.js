@@ -42,8 +42,9 @@ update = async (req , res) =>{
 
 deleet = async (req , res) =>{
     try{
-        const data = await deleteInward(id);
-        res.staus(200).json(data);
+        
+        const data = await deleteInward(req.params.id);
+        res.status(200).json(data);
     }
     catch(error){
         res.status(409).send({message : message.error});
