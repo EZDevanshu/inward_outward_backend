@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const inOutwardModeSchema = new mongoose.Schema(
   {
@@ -48,4 +48,4 @@ const inOutwardModeSchema = new mongoose.Schema(
   },
 );
 
-export default mongoose.model('InOutwardMode' , inOutwardModeSchema)
+module.exports = mongoose.model('InOutwardMode', inOutwardModeSchema)
