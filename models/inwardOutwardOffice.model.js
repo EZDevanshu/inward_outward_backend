@@ -1,3 +1,4 @@
+// inward outward table
 const mongoose = require('mongoose');
 
 const inwardOutwardOfficeSchema = new mongoose.Schema(
@@ -112,7 +113,7 @@ const inwardOutwardOfficeSchema = new mongoose.Schema(
    {
     collection: 'InwardOutwardOffice'
   } , 
-  {
+  {  
   timestamps: { createdAt: 'created', updatedAt: 'modified' }
 }
 );
