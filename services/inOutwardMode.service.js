@@ -1,4 +1,4 @@
-const { default: inOutwardMode } = require("../models/inOutwardMode.model");
+const inOutwardMode = require("../models/inOutwardMode.model");
 
 async function getAllInOutwardMode() {
     try{
