@@ -70,8 +70,8 @@ const outwardSchema = new mongoose.Schema(
     deliveryStatus: { type: String, maxlength: 50 },
   },
   {
-    timestamps: { createdAt: "created", updatedAt: "modified" }
-  }
+    timestamps: { createdAt: "created", updatedAt: "modified" },
+  },
 );
 
-module.exports = mongoose.model("Outward", outwardSchema);
+module.exports = mongoose.model("Outward" , outwardSchema);

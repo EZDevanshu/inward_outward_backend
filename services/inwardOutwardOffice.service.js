@@ -7,13 +7,13 @@ async function getAllInwardOutwardOffice(){
             return{
                 error : false , 
                 data ,
-                message : "data fatched inwardOutwardOfficeMiddleware in get all data successful "
+                message : "data fatched inwardOutwardOffice in get all data successful "
             }
         }
         else {
             return {
                 error : true , 
-                message : "some error occured in inwardOutwardOfficeMiddleware in get all data"
+                message : "some error occured in inwardOutwardOffice in get all data"
             }
         }
     }
