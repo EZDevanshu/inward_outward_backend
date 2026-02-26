@@ -1,8 +1,8 @@
-const courierCompany = require("../models/courierCompany.model");
+const courierCompanyModel = require("../models/courierCompany.model");
 
 async function getAllCourierCompany() {
     try{
-        const data = await courierCompany.find();
+        const data = await courierCompanyModel.find();
 
         if(data){
             return{
