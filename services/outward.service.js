@@ -54,13 +54,13 @@ async function getByIDOutward(id){
 
 async function insertOutward(payload){
     try {
-        const data = await outwardModel.insertMany(payload);
+        const data = await outwardModel.create(payload);
 
         if(data){
             return {
                 error : false ,
                 data ,
-                message : "data fatched outward in insert data successful "
+                message : "data insert in outward successful"
             }
         }
         else{

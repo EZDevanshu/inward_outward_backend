@@ -1,6 +1,6 @@
 const { getAllCourierCompany, getByIDCourierCompany, insertCourierCompany, updateCourierCompany, deleteCourierCompany } = require("../services/courierCompany.service");
 
-getAll = async (req , res) =>{
+const getAll = async (req , res) =>{
     try{
         const data = await getAllCourierCompany();
         res.status(200).json(data);
@@ -10,7 +10,7 @@ getAll = async (req , res) =>{
     }
 }
 
-getByID = async (req , res) =>{
+const getByID = async (req , res) =>{
     try{
         const data = await getByIDCourierCompany(req.params.id);
         res.status(200).json(data);
@@ -20,7 +20,7 @@ getByID = async (req , res) =>{
     }
 }
 
-insert = async (req , res) =>{
+const insert = async (req , res) =>{
     try{
         const data = await insertCourierCompany(req.body);
         res.status(201).json(data);
@@ -30,7 +30,7 @@ insert = async (req , res) =>{
     }
 }
 
-update = async (req , res) =>{
+const update = async (req , res) =>{
     try{
         const data = await updateCourierCompany(req.params.id , req.body);
         res.status(200).json(data);
@@ -40,14 +40,13 @@ update = async (req , res) =>{
     }
 }
 
-deleet = async (req , res) =>{
+const deleet = async (req , res) =>{
     try{
-        
         const data = await deleteCourierCompany(req.params.id);
         res.status(200).json(data);
     }
     catch(error){
-        res.status(409).send({message : message.error});
+        res.status(500).send({message : error.message});
     }
 }
 
