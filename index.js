@@ -10,6 +10,7 @@ const { inOutwardModeRoute } = require('./routes/inOutward.route');
 const { courierCompanyRoute } = require('./routes/courierCompany.route');
 const { outwardRoute } = require('./routes/outward.route');
 const { inwardFromToRoute } = require('./routes/inwardFromTo.route');
+const { authRouter } = require('./routes/auth.route');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use('/in-outward-mode' , inOutwardModeRoute);
 app.use('/courier-company' , courierCompanyRoute);
 app.use('/outward' , outwardRoute);
 app.use('/inward-from-to', inwardFromToRoute);
+app.use('/auth' , authRouter);
 
 app.listen(PORT , ()=>{
     console.log(`server start at ${PORT}`)
