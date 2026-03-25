@@ -1,8 +1,11 @@
 const express = require('express');
 const { getAll, getByID, insert, update, deleet } = require('../controllers/outward.controller');
+const verifyToken = require('../middlewares/auth.middleware');
 
 
 const outwardRoute = express.Router();
+
+outwardRoute.use(verifyToken);
 
 outwardRoute.get('/', getAll)
 outwardRoute.get('/:id', getByID)

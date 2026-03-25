@@ -1,9 +1,11 @@
 const express = require('express');
 const { getAll, getByID, insert, update, deleet } = require('../controllers/inward.controller');
+const verifyToken = require('../middlewares/auth.middleware');
 
 
 const inwardRoute = express.Router();
 
+inwardRoute.use(verifyToken);
 
 inwardRoute.get('/' , getAll);
 inwardRoute.get('/:id' , getByID);

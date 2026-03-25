@@ -1,8 +1,10 @@
 const express = require('express');
 const { getAll, getByID, insert, update, deleet } = require('../controllers/inwardOutwardOffice.controller');
+const verifyToken = require('../middlewares/auth.middleware');
 
 const inwardOutwardOffice = express.Router();
 
+inwardOutwardOffice.use(verifyToken);
 
 inwardOutwardOffice.get('/' , getAll);
 inwardOutwardOffice.get('/:id' , getByID);

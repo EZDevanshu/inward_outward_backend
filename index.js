@@ -17,7 +17,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 connectionDB();
 
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 app.use('/inward-outward-office' , inwardOutwardOffice);
@@ -31,4 +34,3 @@ app.use('/auth' , authRouter);
 app.listen(PORT , ()=>{
     console.log(`server start at ${PORT}`)
 })
-
