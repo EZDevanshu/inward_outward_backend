@@ -17,7 +17,7 @@ async function getAllInOutwardMode() {
                 message : "some error occured in get data in inOutwardMode table"
             }
         }
-    }
+    }   
     catch(error){
         return{
             error : true ,
