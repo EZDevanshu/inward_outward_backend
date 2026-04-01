@@ -18,7 +18,8 @@ async function getAllInOutwardMode() {
             }
         }
     }   
-    // catch 
+    // catch  
+    // if some error occured that block catch it
     catch(error){
         return{
             error : true ,
