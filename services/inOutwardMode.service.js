@@ -18,6 +18,7 @@ async function getAllInOutwardMode() {
             }
         }
     }   
+    // catch 
     catch(error){
         return{
             error : true ,
