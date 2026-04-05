@@ -27,7 +27,7 @@ async function getAllInOutwardMode() {
         }
     }
 }
-
+// get by id inoi=outward table mode 
 async function getByIDInOutWardMode(id){
     try{
         const data = await inOutwardMode.findById(id);
