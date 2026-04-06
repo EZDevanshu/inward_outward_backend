@@ -66,7 +66,7 @@ async function insertInwardOutwardOffice(payload){
         };
     }
 }
-
+// update inward table 
 async function updateInwardOutwardOffice(id , payload){
     try{
         const data = await inwardOutwardOfficeModel.findByIdAndUpdate(id , payload );
